@@ -1,0 +1,51 @@
+/* コンポーネント全体 */
+.edit-bookmarks {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #fefefe;
+  width: 280px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ボタンを横並び */
+.edit-bookmarks p {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+}
+
+/* ボタン共通スタイル */
+.edit-bookmarks button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  background-color: #0077cc;
+  transition: background-color 0.2s;
+}
+
+.edit-bookmarks button:hover {
+  background-color: #005fa3;
+}
+
+/* 削除ボタンだけ赤色 */
+.edit-bookmarks button:nth-child(2) {
+  background-color: #e74c3c;
+}
+
+.edit-bookmarks button:nth-child(2):hover {
+  background-color: #c0392b;
+}
+
+/* 閉じるボタンはグレー */
+.edit-bookmarks button:nth-child(1) {
+  background-color: #95a5a6;
+}
+
+.edit-bookmarks button:nth-child(1):hover {
+  background-color: #7f8c8d;
+}

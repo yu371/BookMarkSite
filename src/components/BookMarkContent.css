@@ -1,0 +1,96 @@
+.bookmark-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 400px;
+  background-color: #ffffff;
+  border: 2px solid #333;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 上中下にバランス配置 */
+  align-items: center;
+}
+
+/* 🔹 右上の「BACK」ボタン */
+.bookmark-buttons {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+}
+
+.bookmark-buttons button {
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.bookmark-buttons button:hover {
+  background-color: #777;
+}
+
+/* 🔹 中央のタイトル＋Visitリンク */
+.bookmark-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 横中央 */
+  justify-content: center; /* 縦中央 */
+  text-align: center;
+  margin-top: 60px; /* 上から少し下げる */
+}
+
+.bookmark-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.bookmark-link {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  border: 1px solid #007bff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  transition: 0.3s;
+}
+
+.bookmark-link:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* 🔹 下部の削除・編集ボタン */
+.edit-bookmarks {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  gap: 40px; /* ボタン間のスペース */
+}
+
+
+.edit-bookmarks button {
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-bookmarks button:hover {
+  background-color: #666;
+}

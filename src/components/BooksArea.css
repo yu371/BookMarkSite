@@ -1,0 +1,160 @@
+/* BooksArea.css */
+
+.books-area {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden
+}
+.add-button {
+  position: fixed; /* ← absolute → fixed に変更 */
+  bottom: 30px;    /* 画面下からの距離 */
+  left: 50%;
+  width: 200;
+  height: 100;       /* 画面の中央に寄せる */
+  transform: translateX(-50%); /* 正確に中央配置 */
+  z-index: 1000;   /* 他の要素の上に表示 */
+}
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* ← これで6個ごとに次の行へ折り返す */
+  gap: 30px;
+  max-width: 1800px; /* 1段に6個入る幅（80px×6 + 隙間分） */
+}
+
+.books-list::-webkit-scrollbar {
+  height: 6px; /* スクロールバーの高さ */
+}
+
+.books-list::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 3px;
+}
+
+
+.book-item {
+  width: 80px;
+  height: 80px;
+  background-color: #f0f0f0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+.book-title {
+  font-size: 12px;
+  text-align: center;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7); /* タイトル背景 */
+  width: 100%;
+  border-radius: 2px;
+  padding: 2px 0;
+}
+
+
+.book-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.book-title-vertical {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: auto;
+  height: 100%;
+  display: grid;
+  place-items: center; /* 縦横中央 */
+  writing-mode: vertical-rl;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  font-weight: bold;
+  font-size: 14px;
+  pointer-events: none; /* 背景クリックを邪魔しない */
+}
+
+.book-text {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #ddd;
+}
+
+.book-url {
+  font-size: 10px;
+  color: #999;
+}
+
+.folder {
+  position: absolute;          /* 画面上で自由に配置 */
+  width: 300px;                /* 幅 */
+  height: 200px;               /* 高さ */
+  background-color: #f0f0f0;   /* フォルダー背景色 */
+  border: 2px solid #333;      /* 境界線 */
+  border-radius: 8px;          /* 角丸 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* 立体感 */
+  cursor: grab;                /* ドラッグ可能カーソル */
+  display: flex;
+  flex-direction: column;
+  user-select: none;           /* テキスト選択不可 */
+  overflow: hidden;
+  transition: background-color 0.2s;
+}
+
+.folder:active {
+  cursor: grabbing;            /* ドラッグ中のカーソル */
+  background-color: #e0e0e0;  /* ドラッグ中の色変化 */
+}
+
+/* フォルダータイトル */
+.folder-title {
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #dcdcdc;
+  border-bottom: 1px solid #999;
+  text-align: center;
+}
+
+/* フォルダー内部コンテンツエリア */
+.folder-contents {
+  flex: 1;
+  position: relative;          /* 内部ブックマークを絶対配置可能にする */
+  padding: 5px;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #1c1c1c;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' result='noise'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23f)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* CSS部分 */
+.shortcut-info {
+  position: fixed;       /* 画面に固定 */
+  top: 10px;             /* 上から10px */
+  left: 10px;            /* 左から10px */
+  background-color: rgba(0, 0, 0, 0.6); /* 半透明の暗め背景 */
+  color: #fff;           /* 白文字 */
+  padding: 6px 10px;     /* 内側の余白 */
+  border-radius: 6px;    /* 丸み */
+  font-size: 14px;
+  font-family: sans-serif;
+  z-index: 1000;         /* 他要素より前面 */
+  pointer-events: none;  /* 背景のクリック操作を邪魔しない */
+}
