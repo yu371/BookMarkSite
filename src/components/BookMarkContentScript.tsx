@@ -15,7 +15,6 @@ export const BookMarkContent = ({
   title,
   url,
   dic,
-  setDic,
   SetContextBool,
 }: Props) => {
   const [newdict, setNewdict] = useState<BookMarktype[]>(dic);

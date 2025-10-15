@@ -1,6 +1,6 @@
 import { SaveData, type BookMarktype } from "./LocalStrageScript";
 import { BookMarkAdd } from "./BookMarkAddScript";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./EditBookMarks.css";
 
 type Props = {
@@ -11,9 +11,7 @@ type Props = {
 };
 export const EditBookMarks = ({
   dic,
-  setDic,
   title,
-  SetContextBool,
 }: Props) => {
   const [isEdit, setEdit] = useState(false);
   const [newdict, setNewdict] = useState<BookMarktype[]>(dic);

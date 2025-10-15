@@ -4,28 +4,28 @@ import type { BookMarktype } from "./LocalStrageScript";
 import { BookMarkAdd } from "./BookMarkAddScript";
 import "./BooksArea.css";
 
-type FolderType = {
-  id: string;
-  title: string;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  contents: BookMarktype[];
-};
+// type FolderType = {
+//   id: string;
+//   title: string;
+//   x: number;
+//   y: number;
+//   width: number;
+//   height: number;
+//   contents: BookMarktype[];
+// };
 
 export const BooksArea = () => {
   const [isPopUpVisible, setPopUpVisible] = useState(false);
   const [dic, setDic] = useState<BookMarktype[]>(() => GetData());
-  const [isContextView, setContextView] = useState(false);
-  const [isDestroy, setDestroy] = useState(false);
-  const [context, setContext] = useState<BookMarktype>({
-    title: "",
-    url: "",
-    x: 0,
-    y: 0,
-  });
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  // const [isContextView, setContextView] = useState(false);
+  // const [isDestroy, setDestroy] = useState(false);
+  // const [context, setContext] = useState<BookMarktype>({
+  //   title: "",
+  //   url: "",
+  //   x: 0,
+  //   y: 0,
+  // });
+  // const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   useEffect(() => {
@@ -33,22 +33,21 @@ export const BooksArea = () => {
     if (data.length > 0) {
       setDic(data);
     }
-  }, [isContextView, isPopUpVisible]);
-  useEffect(() => {}, [position]);
+  }, [ isPopUpVisible]);
   const togglePopUp = () => {
     setPopUpVisible(!isPopUpVisible);
   };
-  const toggleContext = (title: string, url: string, x: number, y: number) => {
-    setContextView(true);
-    console.log("toggleContext");
-    setContext({ title: title, url: url, x, y });
-  };
+  // const toggleContext = (title: string, url: string, x: number, y: number) => {
+  //   setContextView(true);
+  //   console.log("toggleContext");
+  //   setContext({ title: title, url: url, x, y });
+  // };
 
   return (
     <div className="books-area">
       <div className="shortcut-info">Ctrl + 左クリックでリンクに飛ぶ</div>
       <ul className="add-button">
-        {!isPopUpVisible && !isContextView && (
+        {!isPopUpVisible  && (
           <div>
             <button onClick={togglePopUp}>追加</button>
           </div>

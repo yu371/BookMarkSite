@@ -1,5 +1,5 @@
-import { Canvas } from "@react-three/fiber";
-import { Box, OrbitControls } from "@react-three/drei";
+
+import { Box } from "@react-three/drei";
 
 export const BookShelf = () => {
   return (

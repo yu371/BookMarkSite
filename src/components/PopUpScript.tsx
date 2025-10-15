@@ -4,7 +4,7 @@ type Props = {
   SetPopUp: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export const PopUp = ({ isPopUp, SetPopUp }: Props) => {
+export const PopUp = ({ SetPopUp }: Props) => {
   return (
     <div className="popup-overlay" onClick={() => SetPopUp(false)}>
       <div
